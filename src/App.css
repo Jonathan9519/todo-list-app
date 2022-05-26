@@ -47,7 +47,8 @@
   height: 60vh;
   width: 50vh;
   flex-direction: column;
-  background-color: #FFFFFF;
+  background-color: #F8F8F8;
+
   filter: drop-shadow(-7px 4px 8px #000);
 }
 
@@ -59,7 +60,14 @@
   text-align: left;
 }
 
-.row-container{
+.row-container {
   flex-direction: row;
-  width:100%;
+  width: 100%;
+}
+
+.item-card {
+  width: 48vh;
+  background: #FFFFFF;
+  border: solid #FFFFFF 1px;
+  box-shadow: -1px 3px 5px rgba(0, 0, 0, 0.2);
 }
