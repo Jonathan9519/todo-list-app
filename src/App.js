@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './App.css';
-import { Input, FormControl, Checkbox } from '@chakra-ui/react'
+import { Input, FormControl, Checkbox, Box } from '@chakra-ui/react'
 
 function App() {
   const [taskName, setTaskName] = useState("");
@@ -27,27 +27,27 @@ function App() {
   }
 
   const renderItems = todoItems.map((it, ix) => {
-    return <div style={{ width: '100%', padding: 5 }}>
-      <div
-        className='item-card'
-      >
+    return <div style={{ width: '98%', padding: 5 }}>
+      <Box boxShadow='2xl' p='6' rounded='md' bg='white'>
         <div class="ui checkbox">
-          <input 
-          type="checkbox"
-           name="example" 
+          <input
+            type="checkbox"
+            name="example"
           />
           <label>{it.name}</label>
         </div>
         <Checkbox
           isChecked={it.status === 'complete'}
+          colorScheme='green'
+          defaultChecked
           onChange={() => {
             let status = it.status === 'complete' ? 'uncomplete' : 'complete';
             changeItemProp('status', ix, status)
           }}
-          colorScheme='green' defaultChecked>
+        >
           {it.name}
         </Checkbox>
-      </div>
+      </Box>
     </div>
   })
 
